@@ -1,0 +1,23 @@
+
+<h3 class="w3-h3 w3-center">List some Students</h3>
+<table class="w3-table w3-bordered w3-striped w3-border w3-hoverable  w3-small"> 
+<tr class="w3-red">
+   <th><div class="col-md-2  std-list">Id</div></th> 
+   <th><div class="col-md-2  std-list">Fisrt name</div></th> 
+    <th><div class="col-md-2  std-list">Last name</div></th> 
+    <th><div class="col-md-2  std-list">Email</div></th> 
+    <th><div class="col-md-2  std-list">Edit</div></th> 
+    <th><div class="col-md-2  std-list">Delete</div></th> 
+ </tr>
+ <tr *ngFor="let std of students">
+ 
+   <td><div class="col-md-2  std-list">{{ std.sId}}</div></td> 
+   <td><div class="col-md-2  std-list">{{ std.fName}}</div></td> 
+   <td><div class="col-md-2  std-list">{{ std.lName}}</div></td> 
+   <td><div class="col-md-2  std-list">{{ std.email}}</div></td> 
+   <td><div class="col-md-2  std-list"> <button  class="w3-btn w3-purple" (click)="edit(std)">Edit</button></div></td> 
+   <td><div class="col-md-2  std-list"><button  class="w3-btn w3-purple" (click)="delete(std)">Delete</button></div></td> 
+  
+
+</tr>
+</table>

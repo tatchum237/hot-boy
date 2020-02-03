@@ -1,0 +1,46 @@
+<div class="add-main">
+  <h2 class="w3-h2 w3-center"> Add one Student</h2>
+  <form [formGroup]="addForm" novalidate class="w3-container">
+    
+    
+    <div class="w3-label w3-red" *ngIf="addForm.get('fName').hasError('required') && addForm.get('fName').touched">
+        please enter first name 
+    </div>
+ 
+    <div class="form-group">
+      <label for="fName">Nom Elève:</label>
+      <input type="text" formControlName="fName" placeholder="first name" name="fName"  class="w3-input" aut>
+    </div>
+
+    <div class="w3-label w3-red" *ngIf="addForm.get('lName').hasError('required') && addForm.get('lName').touched">
+      please enter last name
+    </div>
+    
+
+    <div class="form-group">
+      <label for="lName">Prénom Elève:</label>
+      <input type="text" formControlName="lName" placeholder="last name" name="lName" class="w3-input" autofocus>
+    </div>
+     
+    <div class="w3-label w3-red" *ngIf="addForm.get('lName').hasError('maxlength') && addForm.get('lName').touched">
+      maximun 12 caractéres.
+    </div>
+
+
+    <div class="w3-label w3-red" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+      please enter email
+    </div>
+   
+    <div class="form-group">
+      <label for="email"> Email:</label>
+      <input type="email" formControlName="email" placeholder="email" name="email" class="w3-input">
+    </div>
+
+    <div class="w3-label w3-red" *ngIf="addForm.get('email').hasError('maxlsength') && addForm.get('email').touched">
+      maximun 30 caractéres.
+    </div>
+
+ 
+    <button  class="w3-btn w3-purple" (click)="onSubmit()">Enregistrer</button>
+  </form>
+ </div>
